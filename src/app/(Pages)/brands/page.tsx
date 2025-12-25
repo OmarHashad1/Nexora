@@ -2,6 +2,8 @@ import { getAllBrands } from "@/APIs/Brands/getAllBrands";
 import BrandsGrid from "@/Components/BrandsGrid/BrandsGrid";
 import { BrandsInterface } from "@/interfaces/Brands/brands.interface";
 
+export const dynamic = 'force-dynamic';
+
 export default async function Page() {
   let brands: { data: BrandsInterface[] };
 

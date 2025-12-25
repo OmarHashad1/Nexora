@@ -2,6 +2,8 @@ import { getUserAddresses } from "@/APIs/Address/getUserAddresses";
 import { addressResponseInterface } from "@/interfaces/address/addressResponse.interface";
 import AddressManager from "@/Components/AddressManager/AddressManager";
 
+export const dynamic = 'force-dynamic';
+
 export default async function AddressPage() {
   let addresses: addressResponseInterface;
 

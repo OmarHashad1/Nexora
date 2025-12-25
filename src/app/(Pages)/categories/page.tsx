@@ -2,6 +2,8 @@ import { getAllCategories } from "@/APIs/Categories/getAllCategories";
 import CategoriesGrid from "@/Components/CategoriesGrid/CategoriesGrid";
 import { CategoriesInterface } from "@/interfaces/Categories/categories.interface";
 
+export const dynamic = 'force-dynamic';
+
 export default async function Page() {
   let categories: { data: CategoriesInterface[] };
 
