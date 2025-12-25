@@ -4,17 +4,23 @@ import { decode } from "next-auth/jwt";
 import { cookies } from "next/headers";
 
 export const getToken = async function () {
-  const cookieName =
-    process.env.NODE_ENV === "production"
-      ? "__Secure-next-auth.session-token"
-      : "next-auth.session-token";
-  const authToken = (await cookies()).get(cookieName)?.value;
+  const cookieStore = await cookies();
+  const allCookies = cookieStore.getAll();
 
-  if (!authToken) {
+  const sessionCookie = allCookies.find(cookie =>
+    cookie.name.includes('next-auth.session-token') ||
+    cookie.name.includes('__Secure-next-auth.session-token')
+  );
+
+
+
+  if (!sessionCookie) {
+    console.log('No session token found in cookies');
     return null;
   }
+
   const token = await decode({
-    token: authToken,
+    token: sessionCookie.value,
     secret: process.env.NEXTAUTH_SECRET!,
   });
 

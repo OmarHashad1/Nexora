@@ -18,6 +18,5 @@ export const getUserId = async function () {
     secret: process.env.NEXTAUTH_SECRET!,
   });
 
-  console.log("User ID from token:", token?.user?._id);
   return token?.user?._id || null;
 };
