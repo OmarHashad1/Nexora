@@ -1,6 +1,7 @@
 import { getUserAddresses } from "@/APIs/Address/getUserAddresses";
 import { addressResponseInterface } from "@/interfaces/address/addressResponse.interface";
 import AddressManager from "@/Components/AddressManager/AddressManager";
+import { toast } from "sonner";
 
 export const dynamic = 'force-dynamic';
 
@@ -10,7 +11,7 @@ export default async function AddressPage() {
   try {
     addresses = await getUserAddresses();
   } catch (err) {
-    console.log(err);
+    toast.error(err);
     return (
       <div className="text-center py-12">
         <p className="text-red-500 text-lg">Failed to load addresses</p>

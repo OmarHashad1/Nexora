@@ -11,5 +11,4 @@ export async function authenticateUser({ email, password }: loginInterface) {
       password,
     }),
   });
-  console.log(res);
 }

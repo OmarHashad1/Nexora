@@ -15,7 +15,7 @@ import {
   FormMessage,
 } from "@/Components/ui/form";
 import { toast } from "sonner";
-import { useQueryClient } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
 import {
   Dialog,
   DialogContent,
@@ -36,7 +36,7 @@ interface AddressManagerProps {
 export default function AddressManager({ addresses }: AddressManagerProps) {
   const [loading, setLoading] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
-  const queryClient = useQueryClient();
+  const router = useRouter();
 
   const form = useForm({
     defaultValues: {
@@ -55,8 +55,7 @@ export default function AddressManager({ addresses }: AddressManagerProps) {
       toast.success("Address Added Successfully!");
       form.reset();
       setOpenDialog(false);
-      queryClient.invalidateQueries({ queryKey: ["getUserAddress"] });
-      window.location.reload();
+      router.refresh();
     } catch (err: any) {
       toast.error(err.message || "Something wrong went happening");
     } finally {

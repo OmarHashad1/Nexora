@@ -20,7 +20,6 @@ export async function getUserOrders() {
   });
   const payload = await res.json();
 
-  console.log("Orders response:", payload);
 
   if (!res.ok)
     throw new Error(`${payload.message || "Something wrong went happening"}`);

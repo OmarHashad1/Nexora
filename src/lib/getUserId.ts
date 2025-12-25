@@ -10,7 +10,6 @@ export const getUserId = async function () {
     cookieStore.get("__Secure-next-auth.session-token")?.value;
 
   if (!authToken) {
-    console.log("No auth token found");
     return null;
   }
   const token = await decode({

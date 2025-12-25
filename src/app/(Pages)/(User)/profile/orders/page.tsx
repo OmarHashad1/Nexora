@@ -10,7 +10,6 @@ export default async function OrdersPage() {
   try {
     orders = await getUserOrders();
   } catch (err) {
-    console.log(err);
     return (
       <div className="text-center py-12">
         <p className="text-red-500 text-lg">Failed to load orders</p>

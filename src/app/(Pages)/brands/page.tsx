@@ -1,7 +1,6 @@
 import { getAllBrands } from "@/APIs/Brands/getAllBrands";
 import BrandsGrid from "@/Components/BrandsGrid/BrandsGrid";
 import { BrandsInterface } from "@/interfaces/Brands/brands.interface";
-
 export const dynamic = 'force-dynamic';
 
 export default async function Page() {
@@ -10,7 +9,7 @@ export default async function Page() {
   try {
     brands = await getAllBrands();
   } catch (err) {
-    console.log(err);
+   
     return (
       <div className="container py-8 text-center text-red-500">
         Error loading brands

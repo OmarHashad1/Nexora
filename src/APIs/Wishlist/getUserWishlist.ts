@@ -14,7 +14,6 @@ export async function getUserWishlist() {
     },
   });
   const payload = await res.json();
-  console.log(payload);
   if (!res.ok)
     throw new Error(`${payload.message || "Something wrong went happening"}`);
 
