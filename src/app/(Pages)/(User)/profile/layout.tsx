@@ -24,7 +24,7 @@ export default function ProfileLayout({
       icon: MapPin,
     },
     {
-      href: "/profile/allorders",
+      href: "/profile/orders",
       label: "Orders",
       icon: ShoppingBag,
     },

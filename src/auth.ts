@@ -1,5 +1,7 @@
 import Credentials from "next-auth/providers/credentials";
 import { NextAuthOptions } from "next-auth";
+
+
 export const authOptions: NextAuthOptions = {
   pages: { signIn: "/login" },
   providers: [
@@ -37,6 +39,7 @@ export const authOptions: NextAuthOptions = {
     },
     session: ({ session, token }: { session: any; token: any }) => {
       session.user = token.user;
+      session.userId = token.userId;
       return session;
     },
   },

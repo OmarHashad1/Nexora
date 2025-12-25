@@ -6,7 +6,9 @@ import { Button } from "@/Components/ui/button";
 import CheckoutClientProps from "@/interfaces/checkout/checkoutClientProps.interface";
 import { addressInfo } from "@/interfaces/address/addressResponse.interface";
 import { OnlinePayment } from "@/APIs/Payment/onlinePayment";
+import { cashPayment } from "@/APIs/Payment/cashPayment";
 import { Spinner } from "@/Components/ui/spinner";
+import { useRouter } from "next/navigation";
 export default function CheckoutClient({
   cartId,
   addresses,
@@ -19,16 +21,26 @@ export default function CheckoutClient({
 
   const [loading, setLoading] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState<string>("cash");
+  const router = useRouter();
 
   const onSubmit = async function () {
     setLoading(true);
     try {
-      const payload = await OnlinePayment(cartId, selectedAddress);
-      console.log(payload);
-      if (payload?.status == "success") {
-        window.location.href = payload.session.url;
+      if (paymentMethod === "cash") {
+        const payload = await cashPayment(cartId, selectedAddress);
+        console.log(payload);
+        if (payload?.status === "success") {
+          router.push("/profile/orders");
+        }
+      } else {
+        const payload = await OnlinePayment(cartId, selectedAddress);
+        console.log(payload);
+        if (payload?.status === "success") {
+          window.location.href = payload.session.url;
+        }
       }
     } catch (err) {
+      console.error(err);
     } finally {
       setLoading(false);
     }
