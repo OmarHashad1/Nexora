@@ -12,10 +12,7 @@ export const getToken = async function () {
     cookie.name.includes('__Secure-next-auth.session-token')
   );
 
-
-
   if (!sessionCookie) {
-    console.log('No session token found in cookies');
     return null;
   }
 

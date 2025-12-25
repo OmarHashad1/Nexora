@@ -13,6 +13,10 @@ export default function AddToCartBtn({ productId }: { productId: string }) {
     mutationKey: ["addToCart"],
     mutationFn: addToCart,
     onSuccess: (data) => {
+      if (data.success === false) {
+        toast.error(data.message);
+        return;
+      }
       toast.success(
         `${data?.message || "Product added successfully to your cart!"}`
       );

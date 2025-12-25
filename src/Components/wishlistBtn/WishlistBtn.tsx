@@ -33,6 +33,10 @@ export default function WishlistBtn({ productId }: { productId: string }) {
     mutationKey: ["addToWishlist"],
     mutationFn: addToWishlist,
     onSuccess: (data) => {
+      if (data.success === false) {
+        toast.error(data.message);
+        return;
+      }
       toast.success(
         `${data?.message || "Product added successfully to your wishlist!"}`
       );
