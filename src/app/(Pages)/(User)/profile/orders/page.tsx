@@ -1,0 +1,20 @@
+import { getUserOrders } from "@/APIs/orders/getUserOrders";
+import { OrderResponseInterface } from "@/interfaces/orders/orderResponse.interface";
+import OrdersList from "@/Components/OrdersList/OrdersList";
+
+export default async function OrdersPage() {
+  let orders: OrderResponseInterface;
+
+  try {
+    orders = await getUserOrders();
+  } catch (err) {
+    console.log(err);
+    return (
+      <div className="text-center py-12">
+        <p className="text-red-500 text-lg">Failed to load orders</p>
+      </div>
+    );
+  }
+
+  return <OrdersList orders={orders?.data || []} />;
+}
