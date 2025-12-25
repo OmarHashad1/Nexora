@@ -10,7 +10,7 @@ export async function OnlinePayment(
   if (!token) throw new Error("Not Authorized");
 
   const res = await fetch(
-    `${process.env.API_URL}orders/checkout-session/${cartId}?url=http://localhost:3000`,
+    `${process.env.API_URL}orders/checkout-session/${cartId}`,
     {
       method: "POST",
       cache: "no-store",
