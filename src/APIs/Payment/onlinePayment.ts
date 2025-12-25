@@ -1,6 +1,7 @@
 "use server";
 import addressInterface from "@/interfaces/address/address.interface";
 import { getToken } from "@/lib/getToken";
+import { headers } from "next/headers";
 
 export async function OnlinePayment(
   cartId: string,
@@ -10,9 +11,13 @@ export async function OnlinePayment(
 
   if (!token) throw new Error("Not Authorized");
 
+  const headersList = await headers();
+  const host = headersList.get("host");
+  const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
+  const redirectUrl = `${protocol}://${host}`;
 
   const res = await fetch(
-    `${process.env.API_URL}orders/checkout-session/${cartId}?url=https://nexora-blond.vercel.app/`,
+    `${process.env.API_URL}orders/checkout-session/${cartId}?url=${redirectUrl}`,
     {
       method: "POST",
       cache: "no-store",
