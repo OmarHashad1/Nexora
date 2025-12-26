@@ -1,3 +1,6 @@
+<div align="center">
+  <img src="./public/NexoraLogo.png" alt="Nexora Logo" width="200"/>
+</div>Ï
 # Nexora - E-commerce Platform
 
 A modern, full-featured e-commerce application built with Next.js 16, featuring dynamic product browsing, shopping cart functionality, user authentication, and online payment integration.
@@ -41,47 +44,6 @@ A modern, full-featured e-commerce application built with Next.js 16, featuring 
 - **Animations**: Framer Motion, GSAP
 - **Icons**: Lucide React
 - **Notifications**: Sonner
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ and npm/yarn/pnpm
-- Git
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd nexora
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables**
-
-   Create a `.env.local` file in the root directory:
-   ```env
-   NEXTAUTH_SECRET="your-nextauth-secret"
-   NEXTAUTH_URL=http://localhost:3000
-   API_URL=https://ecommerce.routemisr.com/api/v1/
-   ```
-
-   To generate a secure `NEXTAUTH_SECRET`:
-   ```bash
-   openssl rand -base64 32
-   ```
-
-4. **Run the development server**
-   ```bash
-   npm run dev
-   ```
-
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
 
@@ -144,54 +106,6 @@ nexora/
 - Order confirmation
 - Payment status tracking
 
-## Environment Variables
-
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `NEXTAUTH_SECRET` | Secret for NextAuth encryption | Yes |
-| `NEXTAUTH_URL` | Application URL | Yes |
-| `API_URL` | Backend API endpoint | Yes |
-
-## Deployment
-
-### Vercel (Recommended)
-
-1. **Push your code to GitHub**
-
-2. **Import project in Vercel**
-   - Visit [vercel.com](https://vercel.com)
-   - Import your repository
-
-3. **Configure environment variables**
-   - Add all variables from `.env.local`
-   - Set `NEXTAUTH_URL` to your production URL
-
-4. **Deploy**
-   - Vercel will automatically build and deploy
-
-### Production Environment Variables
-
-```env
-NEXTAUTH_SECRET="your-production-secret"
-NEXTAUTH_URL=https://your-domain.vercel.app
-API_URL=https://ecommerce.routemisr.com/api/v1/
-```
-
-## Scripts
-
-```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run start        # Start production server
-npm run lint         # Run ESLint
-```
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
 
 ## Performance Optimizations
 
@@ -211,17 +125,6 @@ npm run lint         # Run ESLint
 - Environment variable protection
 - Input validation and sanitization
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License.
 
 ## Acknowledgments
 
@@ -233,10 +136,10 @@ This project is licensed under the MIT License.
 
 ## Support
 
-For support, email your-email@example.com or open an issue in the repository.
+For support, email omarhashad88@gmail.com 
 
 ---
 
-**Live Demo**: [https://nexora-blond.vercel.app](https://nexora-blond.vercel.app)
+**Live Demo**: [https://nexora-inky-three.vercel.app/](https://nexora-inky-three.vercel.app/)
 
-Made with ❤️ using Next.js
+Made by Omar Hashad
