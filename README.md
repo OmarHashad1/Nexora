@@ -1,6 +1,6 @@
 <div align="center">
   <img src="./public/NexoraLogo.png" alt="Nexora Logo" width="200"/>
-</div>Ï
+</div>
 # Nexora - E-commerce Platform
 
 A modern, full-featured e-commerce application built with Next.js 16, featuring dynamic product browsing, shopping cart functionality, user authentication, and online payment integration.
